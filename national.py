@@ -14,7 +14,7 @@ import re
 base_path = r"C:\Users\ext-yaissa\OneDrive - INFOGREFFE\Documents\National"
 
 files_needed = [
-    "Modèle Stats T2.pptx",
+    "Modèle Stats France.pptx",
     "Immat_2024_t3.xlsx",
     "Immat_2025_t3.xlsx",
     "Pcl_2024_t3.xlsx",
@@ -190,7 +190,6 @@ def preprocess5(df):
 
     return df
 
-
 # Sécurité sociale 
 def preprocess7(df):
     dedup_cols = ["CODE_GREFFE", "NUMERO_INSCRIPTION"]
@@ -216,7 +215,7 @@ df_sstr_ss_2024 = preprocess7(df_sstr_2024)
 df_sstr_ss_2025 = preprocess7(df_sstr_2025)
 
 # Ouvrir le ppt
-prs = Presentation(os.path.join(base_path, "Modèle Stats T2.pptx"))
+prs = Presentation(os.path.join(base_path, "Modèle Stats France.pptx"))
 
 #   PARTIE 1 : IMMATRICULATIONS  
 
