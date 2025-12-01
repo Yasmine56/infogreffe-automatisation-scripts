@@ -13,7 +13,7 @@ import re
 base_path = r"C:\Users\ext-yaissa\OneDrive - INFOGREFFE\Documents\Régional"
 
 files_needed = [
-    "Modèle Stats T2 - Copie.pptx",
+    "Modèle Stats Régions France.pptx",
     "Immat_2024_t3.xlsx",
     "Immat_2025_t3.xlsx",
     "Pcl_2024_t3.xlsx",
@@ -168,7 +168,6 @@ def preprocess5(df):
 
     return df
 
-
 # === PRÉ-TRAITEMENT pour SSTR Sécurité sociale ===
 def preprocess7(df):
     dedup_cols = ["CODE_GREFFE", "NUMERO_INSCRIPTION"]
@@ -193,9 +192,8 @@ df_sstr_tresor_2025 = preprocess5(df_sstr_2025)
 df_sstr_ss_2024 = preprocess7(df_sstr_2024)
 df_sstr_ss_2025 = preprocess7(df_sstr_2025)
 
-
 # === OUVRIR LE PPT ===
-prs = Presentation(os.path.join(base_path, "Modèle Stats T2 - Copie.pptx"))
+prs = Presentation(os.path.join(base_path, "Modèle Stats Régions France.pptx"))
 
 # === FILTRAGE Grand Est (Alsace-Champagne-Ardenne-Lorraine) ===
 df_immat_2024_ge = df_immat_2024[df_immat_2024["ADRESSEFRANCEREGIONLIBELLE"] == "Grand Est (Alsace-Champagne-Ardenne-Lorraine)"]
@@ -3668,4 +3666,5 @@ for slide in prs.slides:
 #   SAUVEGARDE           
 output_filename = os.path.join(base_path, "Stats_Régions_new.pptx")
 prs.save(output_filename)
+
 print(f"Fichier PowerPoint modifié enregistré sous : {output_filename}") 
