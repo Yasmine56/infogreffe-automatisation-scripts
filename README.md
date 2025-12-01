@@ -14,7 +14,7 @@ Each script reads Excel files containing the relevant data (not included in the 
 
 ## Dependencies
 
-- Python 3.x  
+- Python 3.8
 - pandas  
 - python-pptx
 - openpyxl
